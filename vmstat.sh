@@ -54,13 +54,8 @@ echo -e "\t},"  >> $logTemp
 cat $logFile >> $logTemp 2>/dev/null
 sed -i '$s/,$//' $logTemp
 
-cp $logTemp $logFile
-
-
-
-
-
-head -n+$[logDuration*20] $logTemp >> $jsonTemp 2>/dev/null
+head -n+$[logDuration*20] $logTemp > $logFile
+cat $logFile >> $jsonTemp 2>/dev/null
 
 
 echo "]}}" >> $jsonTemp
