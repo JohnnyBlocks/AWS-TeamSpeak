@@ -61,6 +61,7 @@ cat $logFile >> $jsonTemp 2>/dev/null
 echo "]}}" >> $jsonTemp
 
 cp $jsonTemp $json
-#rm $jsonTemp
 
+rm $jsonTemp
+rm $logTemp
 
