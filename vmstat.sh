@@ -52,9 +52,10 @@ echo -e "\t},"  >> $logTemp
 
 
 cat $logFile >> $logTemp 2>/dev/null
-sed -i '$s/,$//' $logTemp
 
 head -n+$[logDuration*20] $logTemp > $logFile
+sed -i '$s/,$//' $logFile
+
 cat $logFile >> $jsonTemp 2>/dev/null
 
 
